@@ -4,17 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mini Electronic Golf Green - Adam American</title>
-  <!-- If style.css is in the root, we need ../style.css to go up one folder from portfolio -->
+  <!-- If style.css is in the project root, we need ../style.css here -->
   <link rel="stylesheet" href="../style.css" />
   <style>
-    /* Page-Specific Overrides (Optional) */
+    /* Page-Specific Hero Overrides */
     .project-hero {
       position: relative;
       background: #111;
       color: #fff;
       text-align: center;
-      /* Enough top margin so it doesn't hide behind the fixed header */
-      margin-top: 120px;
+      margin-top: 120px; /* So it doesn’t hide behind the fixed header */
       padding: 60px 20px;
     }
     .hero-slider {
@@ -31,14 +30,12 @@
     .slide.active {
       display: block;
     }
-    /* Support both images and videos in slides */
     .slide img,
     .slide video {
       width: 100%;
       display: block;
       border-radius: 8px;
     }
-    /* Arrows */
     .prev,
     .next {
       cursor: pointer;
@@ -51,7 +48,7 @@
       font-size: 18px;
       border-radius: 4px;
       user-select: none;
-      z-index: 2; /* Ensures arrows appear on top of slides */
+      z-index: 99; /* Ensure arrows are on top */
     }
     .prev {
       left: 10px;
@@ -70,6 +67,7 @@
     .hero-title p {
       font-size: 1.1em;
     }
+    /* Project Details */
     .project-details {
       padding: 40px 20px;
       max-width: 900px;
@@ -114,40 +112,32 @@
   <!-- HERO SECTION (Slideshow) -->
   <section class="project-hero">
     <div class="hero-slider">
-      <!-- Slide 1: Image -->
+      <!-- Slide 1 -->
       <div class="slide active">
-        <img
-          src="../images/golf_green/national_parks_golf_green.jpeg"
-          alt="Golf Green Image 1"
-        />
+        <img src="../images/golf_green/national_parks_golf_green.jpeg" alt="Golf Green 1" />
       </div>
-      <!-- Slide 2: Image -->
+      <!-- Slide 2 -->
       <div class="slide">
-        <img
-          src="../images/golf_green/yellowstone.jpeg"
-          alt="Golf Green Image 2"
-        />
+        <img src="../images/golf_green/yellowstone.jpeg" alt="Golf Green 2" />
       </div>
-      <!-- Slide 3 (Optional): Video -->
+      <!-- Slide 3 (Example: If you have a video) -->
+      <!--
       <div class="slide">
         <video controls>
           <source src="../images/golf_green/golf_green_demo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-
-      <!-- Arrows -->
+      -->
       <div class="prev">&#10094;</div>
       <div class="next">&#10095;</div>
     </div>
-
     <div class="hero-title">
       <h1>Mini Electronic Golf Green</h1>
       <p>Custom Sensors &amp; Automated Gameplay</p>
     </div>
   </section>
 
-  <!-- PROJECT DETAILS SECTION -->
   <section class="project-details">
     <h2>Project Overview</h2>
     <p>
@@ -181,7 +171,6 @@
     <p>&copy; 2025 Adam American. All Rights Reserved.</p>
   </footer>
 
-  <!-- Slideshow Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const slides = document.querySelectorAll(".hero-slider .slide");
@@ -202,15 +191,15 @@
         });
       }
 
-      // Next/Prev event listeners
       prev.addEventListener("click", function () {
         showSlide(currentSlide - 1);
       });
+
       next.addEventListener("click", function () {
         showSlide(currentSlide + 1);
       });
 
-      // Initialize
+      // Initialize slideshow
       showSlide(currentSlide);
     });
   </script>

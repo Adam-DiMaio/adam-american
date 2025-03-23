@@ -119,6 +119,28 @@ nav ul li a:hover {
   margin-bottom: 40px;
 }
 
+/* Slideshow Arrows */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 18px;
+  border-radius: 4px;
+  user-select: none;
+  z-index: 99; /* ensures arrows appear above .hero::after */
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
 /* About Section (for about.html and index.html) */
 .about-section {
   padding: 80px 20px;
@@ -145,7 +167,6 @@ nav ul li a:hover {
 }
 
 /* PDF Container (for resume.html) */
-/* Resume Page PDF Container */
 .pdf-container {
   max-width: 1000px; /* Adjust if you want a wider or narrower container */
   margin: 120px auto 40px; /* Centers on page and adds top margin so it isn’t hidden by header */
@@ -290,8 +311,12 @@ nav ul li a:hover {
   width: 50%;
 }
 
-.timeline-item.left { left: 0; }
-.timeline-item.right { left: 50%; }
+.timeline-item.left { 
+  left: 0; 
+}
+.timeline-item.right { 
+  left: 50%; 
+}
 
 .timeline-item .content {
   background: #333;
