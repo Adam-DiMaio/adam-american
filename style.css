@@ -10,8 +10,7 @@ body {
   background: #000;
   color: #fff;
   line-height: 1.6;
-  /* Ensures content isn't hidden behind the fixed header */
-  padding-top: 100px;
+  padding-top: 100px; /* Ensures content isn't hidden behind the fixed header */
 }
 
 /* Header Styles */
@@ -26,12 +25,16 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  /* Allows wrapping on smaller screens */
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 header img {
   width: 150px;
+}
+
+header h1 {
+  font-size: 1.5em;
+  margin-left: 20px;
 }
 
 nav ul {
@@ -59,24 +62,24 @@ nav ul li a:hover {
   position: relative;
   height: 80vh;
   overflow: hidden;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.hero-slider {
+.hero .hero-slider {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
 }
 
-.hero-slider .slide {
+.hero .hero-slider .slide {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -86,18 +89,18 @@ nav ul li a:hover {
   transition: opacity 1s ease-in-out;
 }
 
-.hero-slider .slide.active {
+.hero .hero-slider .slide.active {
   opacity: 1;
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -110,18 +113,56 @@ nav ul li a:hover {
 }
 
 .hero-content h1 {
-  font-size: 48px; 
+  font-size: 48px;
   margin-bottom: 20px;
 }
 
 .hero-content p {
-  font-size: 20px; 
+  font-size: 20px;
   margin-bottom: 40px;
 }
 
-/* Slideshow Arrows */
-.prev,
-.next {
+/* Project Page Hero Section (for project pages like mini-electronic-paddle-boats.html) */
+.project-hero {
+  position: relative;
+  background: #111;
+  color: #fff;
+  text-align: center;
+  margin-top: 120px;
+  padding: 60px 20px;
+}
+
+.project-hero .hero-slider {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  border-radius: 8px;
+  min-height: 300px;
+  max-height: 450px;
+}
+
+.project-hero .slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.project-hero .slide.active {
+  display: block;
+}
+
+.project-hero .slide img,
+.project-hero .slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.project-hero .prev,
+.project-hero .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -132,13 +173,53 @@ nav ul li a:hover {
   font-size: 18px;
   border-radius: 4px;
   user-select: none;
-  z-index: 99; /* ensures arrows appear above .hero::after */
 }
-.prev {
+
+.project-hero .prev {
   left: 10px;
 }
-.next {
+
+.project-hero .next {
   right: 10px;
+}
+
+.project-hero .hero-title {
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 20px;
+}
+
+.project-hero .hero-title h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.project-hero .hero-title p {
+  font-size: 1.1em;
+}
+
+.project-details {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-details h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+.project-details p,
+.project-details ul {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.project-details ul {
+  list-style: disc;
+  margin-left: 20px;
 }
 
 /* About Section (for about.html and index.html) */
@@ -148,9 +229,9 @@ nav ul li a:hover {
   text-align: center;
 }
 
-.about-section h2 { 
-  font-size: 36px; 
-  margin-bottom: 20px; 
+.about-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .about-section p {
@@ -168,10 +249,10 @@ nav ul li a:hover {
 
 /* PDF Container (for resume.html) */
 .pdf-container {
-  max-width: 1000px; /* Adjust if you want a wider or narrower container */
-  margin: 120px auto 40px; /* Centers on page and adds top margin so it isn’t hidden by header */
+  max-width: 1000px;
+  margin: 120px auto 40px;
   padding: 20px;
-  text-align: center; /* Centers the heading and the links */
+  text-align: center;
 }
 
 .pdf-container h2 {
@@ -192,12 +273,11 @@ nav ul li a:hover {
 
 .pdf-embed {
   width: 100%;
-  height: 1000px; /* Adjust as needed for a taller/shorter view */
+  height: 1000px;
   margin: 0 auto;
   position: relative;
 }
 
-/* The object is set to fill the .pdf-embed container */
 .pdf-embed object {
   width: 100%;
   height: 100%;
@@ -209,7 +289,7 @@ nav ul li a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  padding: 120px 20px 20px; /* extra top padding for fixed header */
+  padding: 120px 20px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -311,11 +391,12 @@ nav ul li a:hover {
   width: 50%;
 }
 
-.timeline-item.left { 
-  left: 0; 
+.timeline-item.left {
+  left: 0;
 }
-.timeline-item.right { 
-  left: 50%; 
+
+.timeline-item.right {
+  left: 50%;
 }
 
 .timeline-item .content {
@@ -362,9 +443,9 @@ nav ul li a:hover {
   color: #ccc;
 }
 
-.timeline-item p { 
-  font-size: 16px; 
-  margin-bottom: 15px; 
+.timeline-item p {
+  font-size: 16px;
+  margin-bottom: 15px;
 }
 
 .timeline-item img {
@@ -385,18 +466,17 @@ footer {
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
-  /* Reduce header padding, allow wrap if needed */
   header {
     padding: 15px 20px;
     flex-wrap: wrap;
   }
 
-  /* Adjust nav spacing on small screens */
   nav ul {
     flex-direction: column;
     align-items: flex-start;
     margin-top: 10px;
   }
+
   nav ul li {
     margin-left: 0;
     margin-bottom: 10px;
@@ -410,15 +490,16 @@ footer {
     height: 180px;
   }
 
-  .hero-content h1 { 
-    font-size: 36px; 
-  }
-  .hero-content p { 
-    font-size: 18px; 
+  .hero-content h1 {
+    font-size: 36px;
   }
 
-  .timeline-container::after { 
-    left: 31px; 
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .timeline-container::after {
+    left: 31px;
   }
 
   .timeline-item {
@@ -427,9 +508,11 @@ footer {
     padding-right: 25px;
     margin-bottom: 20px;
   }
-  .timeline-item.right { 
-    left: 0; 
+
+  .timeline-item.right {
+    left: 0;
   }
+
   .timeline-item.left::before,
   .timeline-item.right::before {
     left: 60px;

@@ -115,22 +115,13 @@
         </video>
       </div>
       <div class="slide">
-        <img
-          src="../images/paddle_prodigies/ansys_fluent.png"
-          alt="Paddle Boats Image 1"
-        />
+        <img src="../images/paddle_prodigies/ansys_fluent.png" alt="Paddle Boats Image 1" />
       </div>
       <div class="slide">
-        <img
-          src="../images/paddle_prodigies/propeller.png"
-          alt="Paddle Boats Image 2"
-        />
+        <img src="../images/paddle_prodigies/propeller.png" alt="Paddle Boats Image 2" />
       </div>
       <div class="slide">
-        <img
-          src="../images/paddle_prodigies/rudder_prop_underneath.jpeg"
-          alt="Paddle Boats Image 3"
-        />
+        <img src="../images/paddle_prodigies/rudder_prop_underneath.jpeg" alt="Paddle Boats Image 3" />
       </div>
       <div class="slide">
         <video controls>
@@ -138,9 +129,8 @@
           Your browser does not support the video tag.
         </video>
       </div>
-      <!-- Add or remove slides as needed -->
-      <div class="prev">&#10094;</div>
-      <div class="next">&#10095;</div>
+      <div class="prev">❮</div>
+      <div class="next">❯</div>
     </div>
 
     <div class="hero-title">
@@ -187,7 +177,7 @@
       const prev = document.querySelector(".hero-slider .prev");
       const next = document.querySelector(".hero-slider .next");
       let currentSlide = 0;
-
+  
       function showSlide(index) {
         if (index >= slides.length) {
           currentSlide = 0;
@@ -196,19 +186,27 @@
         } else {
           currentSlide = index;
         }
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === currentSlide);
+        // Pause all videos and remove active class
+        slides.forEach((slide) => {
+          const video = slide.querySelector("video");
+          if (video) {
+            video.pause();
+          }
+          slide.classList.remove("active");
         });
+        // Show the current slide
+        slides[currentSlide].classList.add("active");
       }
-
+  
+      // Event listeners for arrows
       prev.addEventListener("click", function () {
         showSlide(currentSlide - 1);
       });
-
+  
       next.addEventListener("click", function () {
         showSlide(currentSlide + 1);
       });
-
+  
       // Initialize slideshow
       showSlide(currentSlide);
     });
