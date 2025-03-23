@@ -4,16 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mini Electronic Golf Green - Adam American</title>
+  <!-- If style.css is in the root, we need ../style.css to go up one folder from portfolio -->
   <link rel="stylesheet" href="../style.css" />
   <style>
+    /* Page-Specific Overrides (Optional) */
     .project-hero {
       position: relative;
       background: #111;
       color: #fff;
       text-align: center;
-      /* Increase margin-top so the hero is fully below the header */
+      /* Enough top margin so it doesn't hide behind the fixed header */
       margin-top: 120px;
-      padding: 60px 20px; /* Reduced padding for a shorter hero */
+      padding: 60px 20px;
     }
     .hero-slider {
       position: relative;
@@ -29,11 +31,14 @@
     .slide.active {
       display: block;
     }
-    .slide img {
+    /* Support both images and videos in slides */
+    .slide img,
+    .slide video {
       width: 100%;
       display: block;
       border-radius: 8px;
     }
+    /* Arrows */
     .prev,
     .next {
       cursor: pointer;
@@ -46,6 +51,7 @@
       font-size: 18px;
       border-radius: 4px;
       user-select: none;
+      z-index: 2; /* Ensures arrows appear on top of slides */
     }
     .prev {
       left: 10px;
@@ -105,20 +111,32 @@
     </nav>
   </header>
 
+  <!-- HERO SECTION (Slideshow) -->
   <section class="project-hero">
     <div class="hero-slider">
+      <!-- Slide 1: Image -->
       <div class="slide active">
         <img
           src="../images/golf_green/national_parks_golf_green.jpeg"
           alt="Golf Green Image 1"
         />
       </div>
+      <!-- Slide 2: Image -->
       <div class="slide">
         <img
           src="../images/golf_green/yellowstone.jpeg"
           alt="Golf Green Image 2"
         />
       </div>
+      <!-- Slide 3 (Optional): Video -->
+      <div class="slide">
+        <video controls>
+          <source src="../images/golf_green/golf_green_demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Arrows -->
       <div class="prev">&#10094;</div>
       <div class="next">&#10095;</div>
     </div>
@@ -129,6 +147,7 @@
     </div>
   </section>
 
+  <!-- PROJECT DETAILS SECTION -->
   <section class="project-details">
     <h2>Project Overview</h2>
     <p>
@@ -137,14 +156,14 @@
       interactive experience.
     </p>
 
-    <h2>Key Contributions & Responsibilities</h2>
+    <h2>Key Contributions &amp; Responsibilities</h2>
     <ul>
       <li>Designed &amp; implemented custom sensor circuits for environmental monitoring.</li>
       <li>Developed programming logic to automate gameplay dynamics.</li>
       <li>Contributed to physical layout &amp; modeling of the golf green simulation.</li>
     </ul>
 
-    <h2>Skills & Technologies</h2>
+    <h2>Skills &amp; Technologies</h2>
     <ul>
       <li><strong>Electronics:</strong> Custom sensor circuit design &amp; integration</li>
       <li><strong>Programming:</strong> Embedded programming for automation</li>
@@ -162,6 +181,7 @@
     <p>&copy; 2025 Adam American. All Rights Reserved.</p>
   </footer>
 
+  <!-- Slideshow Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const slides = document.querySelectorAll(".hero-slider .slide");
@@ -182,15 +202,15 @@
         });
       }
 
+      // Next/Prev event listeners
       prev.addEventListener("click", function () {
         showSlide(currentSlide - 1);
       });
-
       next.addEventListener("click", function () {
         showSlide(currentSlide + 1);
       });
 
-      // Initialize slideshow
+      // Initialize
       showSlide(currentSlide);
     });
   </script>
