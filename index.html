@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adam American - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Basic Reset & Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+      /* Ensures hero/timeline aren't hidden behind the fixed header */
+      padding-top: 100px;
+    }
+
+    /* Fixed Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+    }
+    header img {
+      width: 150px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 30px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ccc;
+    }
+    
+    /* Hero Section with Automatic Background Slideshow */
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center;
+    }
+    /* Slideshow container covers the entire hero */
+    .hero-slider {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    /* Individual slides */
+    .hero-slider .slide {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .hero-slider .slide.active {
+      opacity: 1;
+    }
+    /* Overlay to darken background */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    /* Hero content (text) */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .hero-content h1 {
+      font-size: 48px; 
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 20px; 
+      margin-bottom: 40px;
+    }
+    
+    /* About Section */
+    .about-section {
+      padding: 80px 20px;
+      background: #111;
+      text-align: center;
+    }
+    .about-section h2 { 
+      font-size: 36px; 
+      margin-bottom: 20px; 
+    }
+    .about-section p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    
+    /* Timeline Section */
+    .timeline-section {
+      padding: 80px 20px;
+      background: #222;
+    }
+    .timeline-section h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+    .timeline-container {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+    }
+    /* Vertical Line */
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #444;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+    .timeline-item {
+      padding: 20px 30px;
+      position: relative;
+      background: inherit;
+      width: 50%;
+    }
+    .timeline-item.left { left: 0; }
+    .timeline-item.right { left: 50%; }
+    .timeline-item .content {
+      background: #333;
+      padding: 20px;
+      border-radius: 6px;
+    }
+    .timeline-item.left::before {
+      content: " ";
+      position: absolute;
+      top: 22px;
+      right: -8px;
+      border-width: 8px;
+      border-style: solid;
+      border-color: transparent transparent transparent #333;
+    }
+    .timeline-item.right::before {
+      content: " ";
+      position: absolute;
+      top: 22px;
+      left: -8px;
+      border-width: 8px;
+      border-style: solid;
+      border-color: transparent #333 transparent transparent;
+    }
+    .timeline-date {
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 5px;
+    }
+    .timeline-item h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    .timeline-item h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #ccc;
+    }
+    .timeline-item p { 
+      font-size: 16px; 
+      margin-bottom: 15px; 
+    }
+    /* Example image styling if needed */
+    .timeline-item img {
+      width: 100%;
+      max-width: 400px;
+      margin: 10px 0;
+      border-radius: 6px;
+      display: block;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      font-size: 14px;
+    }
+
+    /* Responsive Adjustments */
+    @media screen and (max-width: 768px) {
+      header { padding: 15px 20px; }
+      .hero-content h1 { 
+        font-size: 36px; 
+      }
+      .hero-content p { 
+        font-size: 18px; 
+      }
+      .timeline-container::after { left: 31px; }
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        margin-bottom: 20px;
+      }
+      .timeline-item.right { left: 0; }
+      .timeline-item.left::before,
+      .timeline-item.right::before {
+        left: 60px;
+        border: none;
+        border-left: 8px solid #333;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="images/adam_american_logo/ADAM American - Eagle Logo No Background.png" alt="Adam American Logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../resume.html">RESUME</a></li>
+        <li><a href="../projects.html">PROJECTS</a></li>
+        <li><a href="../about.html">ABOUT</a></li>
+        <li><a href="../contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION WITH AUTOMATIC BACKGROUND SLIDESHOW -->
+  <section class="hero">
+    <div class="hero-slider">
+      <!-- Replace these images with your own paths -->
+      <div class="slide active" style="background-image: url('../images/adam/Spring Career Fair Headshots - 2025.jpg');"></div>
+      <div class="slide" style="background-image: url('../images/adam/me-next-to-earth-station.jpeg');"></div>
+      <div class="slide" style="background-image: url('../images/adam/me-next-to-boat.png');"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Welcome to Adam American</h1>
+      <p>Showcasing the best of my mechanical engineering projects, design advancements, and manufacturing innovations.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <h2>About Me</h2>
+    <p>
+      My name is Adam—a passionate mechanical engineer specializing in design,
+      manufacturing, and advanced simulations. I thrive on transforming ideas
+      into innovative solutions.
+    </p>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE TIMELINE -->
+  <section class="timeline-section">
+    <h2>Professional Experience</h2>
+    <div class="timeline-container">
+      <!-- Timeline Item 1: R&D Scholar -->
+      <div class="timeline-item left">
+        <div class="content">
+          <div class="timeline-date">Aug 2022 - May 2024</div>
+          <h3>R&D Scholar: Proprietary Wearable Medical Device</h3>
+          <h4>Utah Tech University, St George, UT</h4>
+          <!-- Example Image -->
+          <img src="images/inspire/inspire_45_degree.jpeg" alt="Wearable Medical Device" />
+          <p>
+            Collaborated with a multidisciplinary team to create a wearable
+            medical device for knee reconstruction patients—utilizing CAD, 
+            coding, and prototyping.
+          </p>
+          <a href="portfolio/rd-scholar.html" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Timeline Item 2: Brightline West Summer Associate -->
+      <div class="timeline-item right">
+        <div class="content">
+          <div class="timeline-date">May 2023 - July 2023</div>
+          <h3>Summer Associate</h3>
+          <h4>Brightline West, Las Vegas, NV</h4>
+          <img src="images/brightline_west/train-exterior-renderings-1-update.jpg" alt="Brightline West Train" />
+          <p>
+            Worked with the Infrastructure Design Team on the pioneering US
+            High-Speed Train project, optimizing platform design and layout
+            for safety and efficiency.
+          </p>
+          <a href="portfolio/brightline-west.html" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Timeline Item 3: Brightline West Intern -->
+      <div class="timeline-item left">
+        <div class="content">
+          <div class="timeline-date">June 2024 - July 2024</div>
+          <h3>Intern</h3>
+          <h4>Brightline West, Las Vegas, NV</h4>
+          <img src="images/brightline_west/brightline-west-route-map-120823.jpg" alt="Route Map" />
+          <p>
+            Conducted research and technical analysis, contributing to hazard
+            log analysis and contractor integration to enhance operational
+            safety.
+          </p>
+          <a href="portfolio/brightline-west.html" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Timeline Item 4: Current Project – 3U CubeSat -->
+      <div class="timeline-item right">
+        <div class="content">
+          <div class="timeline-date">Aug 2024 - May 2025</div>
+          <h3>3U CubeSat</h3>
+          <h4>Communications Team, Utah Tech University</h4>
+          <img src="images/cubesat/antenna_module_closed.png" alt="3U CubeSat" />
+          <p>
+            Currently working on antenna module and Earth station design—ensuring
+            FCC compliance and effective manufacturing plans.
+          </p>
+          <a href="portfolio/cubesat.html" class="project-link">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAST PROJECTS TIMELINE SECTION -->
+  <section class="timeline-section">
+    <h2>Past Projects</h2>
+    <div class="timeline-container">
+      <div class="timeline-item left">
+        <div class="content">
+          <div class="timeline-date">Jan - Apr 2022</div>
+          <h3>Mini Electronic Golf Course</h3>
+          <h4>National Parks</h4>
+          <img src="images/golf_green/national_parks_golf_green.jpeg" alt="Mini Golf Course" />
+          <p>
+            Developed an interactive golf simulation using Arduino and 
+            laser-triggered fog machines, collaborating with a team of 
+            engineering students.
+          </p>
+          <a href="portfolio/mini-golf-green.html" class="project-link">View Project</a>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content">
+          <div class="timeline-date">Jan - Apr 2023</div>
+          <h3>Arcade Game: Excalibur</h3>
+          <h4>Team Collaboration</h4>
+          <img src="images/arcade_game/arcade_game.jpeg" alt="Arcade Game" />
+          <p>
+            Created a retro-style arcade game integrating Arduino programming, 
+            3D printing, and laser cutting for interactive gameplay.
+          </p>
+          <a href="portfolio/arcade-game.html" class="project-link">View Project</a>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="content">
+          <div class="timeline-date">Jan - Apr 2024</div>
+          <h3>Electronic Motor Boat</h3>
+          <h4>Paddle Prodigies</h4>
+          <img src="images/paddle_prodigies/ansys_fluent.png" alt="Motor Boat" />
+          <p>
+            Designed and implemented the propulsion system using fluid 
+            dynamics, FEA, and machinery—achieving approximately 218.62 N 
+            of thrust.
+          </p>
+          <a href="portfolio/paddle-boats.html" class="project-link">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Adam American. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Automatic Slideshow Script for Hero Section -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".hero-slider .slide");
+      let currentSlide = 0;
+      function showNextSlide() {
+        // Hide current slide
+        slides[currentSlide].classList.remove("active");
+        // Move to next slide
+        currentSlide = (currentSlide + 1) % slides.length;
+        // Show next slide
+        slides[currentSlide].classList.add("active");
+      }
+      // Rotate every 4 seconds
+      setInterval(showNextSlide, 4000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Engineering Projects - Adam American</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+    }
+    header img {
+      width: 150px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 30px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ccc;
+    }
+
+    /* Projects Hero Section with Background Image */
+    .projects-hero {
+      position: relative;
+      margin-top: 180px !important; /* Larger than your header’s height */
+      padding: 80px 20px;
+      position: relative;
+      text-align: center;
+      color: #fff;
+      background: url('../images/background/machine-shop.jpeg') no-repeat center center/cover;
+    }
+    .projects-hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    /* Projects Grid */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 60px 20px 20px; /* Top padding to separate from hero section */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 10px;
+      background: #2c3e50;
+    }
+    .card .card-bg {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .card:hover .card-bg {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    .card .card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .card:hover .card-overlay {
+      transform: translateY(0);
+    }
+    .card h2 {
+      font-size: 1.25em;
+      margin-bottom: 5px;
+    }
+    .card p {
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+    .skills {
+      font-size: 0.8em;
+    }
+    .skills strong {
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="images/adam_american_logo/ADAM American - Eagle Logo No Background.png" alt="Adam American Logo" />
+    </a>
+    <nav>
+        <ul>
+          <li><a href="../index.html">HOME</a></li>
+          <li><a href="../resume.html">RESUME</a></li>
+          <li><a href="../projects.html">PROJECTS</a></li>
+          <li><a href="../about.html">ABOUT</a></li>
+          <li><a href="../contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <!-- Projects Hero Section -->
+  <section class="projects-hero">
+    <div class="hero-content">
+      <h1>Projects</h1>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-container">
+    <!-- Brightline West Project Card -->
+    <a href="portfolio/brightline-west.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('../images/brightline_west/train-exterior-renderings-1-update.jpg');"></div>
+        <div class="card-overlay">
+          <h2>Brightline West</h2>
+          <p>High-Speed Train Infrastructure &amp; Risk Analysis</p>
+          <div class="skills">
+            <p><strong>Technical Analysis</strong> – Risk management &amp; regulatory research</p>
+            <p><strong>Infrastructure Design</strong> – Platform &amp; layout optimization</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- R&D Scholar Project Card -->
+    <a href="portfolio/rd-scholar.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('images/inspire/inspire_45_degree.jpeg');"></div>
+        <div class="card-overlay">
+          <h2>R&D Scholar: Wearable Medical Device</h2>
+          <p>Advanced sensor integration &amp; wearable design</p>
+          <div class="skills">
+            <p><strong>Medical Engineering</strong> – Sensor integration</p>
+            <p><strong>Wearable Design</strong> – Ergonomic modeling</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Mini Electronic Paddle Boats Project Card -->
+    <a href="portfolio/paddle-boats.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('images/paddle_prodigies/ansys_fluent.png');"></div>
+        <div class="card-overlay">
+          <h2>Mini Electronic Paddle Boats</h2>
+          <p>Hydrodynamic efficiency &amp; electronic control</p>
+          <div class="skills">
+            <p><strong>CAD &amp; Simulation</strong> – Boat modeling</p>
+            <p><strong>Fluid Dynamics</strong> – Performance analysis</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- CubeSat Project Card -->
+    <a href="portfolio/cubesat.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('../images/cubesat/earth-station.jpeg');"></div>
+        <div class="card-overlay">
+          <h2>CubeSat</h2>
+          <p>Innovative antenna module for Earth observation</p>
+          <div class="skills">
+            <p><strong>Satellite Engineering</strong> – Small satellite design</p>
+            <p><strong>Radio Communication</strong> – Antenna integration</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Finite Element Analysis Project Card -->
+    <a href="portfolio/fea.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('../images/fea/phone-drop.png');"></div>
+        <div class="card-overlay">
+          <h2>Finite Element Analysis</h2>
+          <p>Structural &amp; transient simulations</p>
+          <div class="skills">
+            <p><strong>Simulation</strong> – Finite element modeling</p>
+            <p><strong>Material Analysis</strong> – Stress testing</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Modern Machining Project Card -->
+    <a href="portfolio/modern-machining.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('images/modern_machining/chips-flying.jpeg');"></div>
+        <div class="card-overlay">
+          <h2>Modern Machining</h2>
+          <p>High-speed techniques &amp; process optimization</p>
+          <div class="skills">
+            <p><strong>Manufacturing</strong> – Precision machining</p>
+            <p><strong>Material Science</strong> – Cutting tool analysis</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Vibrations Project Card -->
+    <a href="portfolio/vibrations.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('images/vibrations/CubeSat Modal Results.png');"></div>
+        <div class="card-overlay">
+          <h2>Vibrations</h2>
+          <p>Modal response &amp; structural dynamics</p>
+          <div class="skills">
+            <p><strong>Structural Dynamics</strong> – Mode shape analysis</p>
+            <p><strong>Simulation</strong> – Resonance testing</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Fracture Mechanics Project Card -->
+    <a href="portfolio/fracture-mechanics.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('images/fracture_mechanics/CTOD LAMMPS Simulation.png');"></div>
+        <div class="card-overlay">
+          <h2>Fracture Mechanics</h2>
+          <p>Material failure &amp; deformation analysis</p>
+          <div class="skills">
+            <p><strong>CAD</strong> – Cloud-based modeling</p>
+            <p><strong>Dynamics</strong> – Load calculations</p>
+            <p><strong>3D Printing</strong> – Rapid prototyping</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Heat Transfer Project Card -->
+    <a href="portfolio/heat-transfer.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('images/heat_transfer/heat_sink_ansys_discovery.png');"></div>
+        <div class="card-overlay">
+          <h2>Heat Transfer</h2>
+          <p>Thermal analysis &amp; material optimization</p>
+          <div class="skills">
+            <p><strong>Thermal Analysis</strong> – Heat simulation</p>
+            <p><strong>Material Science</strong> – Conductivity evaluation</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Arcade Game Project Card -->
+    <a href="portfolio/arcade-game.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('images/arcade_game/arcade_game.jpeg');"></div>
+        <div class="card-overlay">
+          <h2>Arcade Game</h2>
+          <p>Retro-style arcade game design</p>
+          <div class="skills">
+            <p><strong>Microcontrollers</strong> – Embedded programming</p>
+            <p><strong>Game Design</strong> – Interactive mechanics</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Mini Electronic Golf Green Project Card -->
+    <a href="portfolio/mini-golf-green.html" class="card-link">
+      <div class="card">
+        <div class="card-bg" style="background-image: url('images/golf_green/national_parks_golf_green.jpeg');"></div>
+        <div class="card-overlay">
+          <h2>Mini Electronic Golf Green</h2>
+          <p>Custom sensors &amp; automated gameplay</p>
+          <div class="skills">
+            <p><strong>Electronics</strong> – Custom sensor circuits</p>
+            <p><strong>Programming</strong> – Automated gameplay</p>
+            <p><strong>Design</strong> – Layout modeling</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Adam American. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

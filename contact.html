@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Adam American</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Contact Page Styles */
+    .contact-container {
+      max-width: 800px;
+      margin: 120px auto 40px;
+      padding: 20px;
+      background: #222;
+      border-radius: 10px;
+    }
+    .contact-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    .contact-container form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-container form label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .contact-container form input,
+    .contact-container form textarea {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+    .contact-container form input[type="submit"] {
+      background: #2c3e50;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-container form input[type="submit"]:hover {
+      background: #444;
+    }
+    .contact-info {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1em;
+    }
+    .contact-info a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="index.html">
+      <img src="images/adam_american_logo/ADAM American - Eagle Logo No Background.png" alt="Adam American Logo" />
+    </a>
+    <nav>
+        <ul>
+          <li><a href="../index.html">HOME</a></li>
+          <li><a href="../resume.html">RESUME</a></li>
+          <li><a href="../projects.html">PROJECTS</a></li>
+          <li><a href="../about.html">ABOUT</a></li>
+          <li><a href="../contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <!-- CONTACT FORM SECTION -->
+  <section class="contact-container">
+    <h2>Contact Me</h2>
+    <form action="mailto:adam.dimaio@outlook.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+      
+      <input type="submit" value="Send">
+    </form>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:adam.dimaio@outlook.com">adam.dimaio@outlook.com</a></p>
+      <p>Phone: <a href="tel:+17029542032">+1 (702) 954-2032</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/adamdimaio/" target="_blank">adamdimaio</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Adam American. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

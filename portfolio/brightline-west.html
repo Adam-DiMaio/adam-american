@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brightline West - Adam American</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* PAGE-SPECIFIC STYLES FOR BRIGHTLINE WEST */
+
+    /* Hero Section */
+    .project-hero {
+      position: relative;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      /* Increase margin-top so the hero is fully below the header */
+      margin-top: 120px;
+      padding: 60px 20px; /* Reduced padding for a shorter hero */
+    }
+
+    /* Slideshow Container */
+    .hero-slider {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    /* Individual Slides */
+    .slide {
+      display: none;
+      width: 100%;
+    }
+    .slide.active {
+      display: block;
+    }
+
+    /* Images & Videos within Slides */
+    .slide img,
+    .slide video {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Slideshow Arrows */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px 16px;
+      font-size: 18px;
+      border-radius: 4px;
+      user-select: none;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+
+    /* Hero Title & Subtitle */
+    .hero-title {
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    .hero-title h1 {
+      font-size: 2em; /* Slightly smaller to keep hero concise */
+      margin-bottom: 10px;
+    }
+    .hero-title p {
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    /* Project Details Section */
+    .project-details {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .project-details h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+    .project-details p,
+    .project-details ul {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .project-details ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="../index.html">
+      <img
+        src="../images/adam_american_logo/ADAM American - Eagle Logo No Background.png"
+        alt="Adam American Logo"
+      />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../resume.html">RESUME</a></li>
+        <li><a href="../projects.html">PROJECTS</a></li>
+        <li><a href="../about.html">ABOUT</a></li>
+        <li><a href="../contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION (Slideshow + Title) -->
+  <section class="project-hero">
+    <div class="hero-slider">
+      <div class="slide active">
+        <img
+          src="../images/brightline_west/brightline-west-aerial-view (1).jpg"
+          alt="Brightline West Image 1"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="../images/brightline_west/brightline-west-route-map-120823.jpg"
+          alt="Brightline West Image 2"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="../images/brightline_west/train-exterior-renderings-1-update.jpg"
+          alt="Brightline West Image 3"
+        />
+      </div>
+      <div class="prev">&#10094;</div>
+      <div class="next">&#10095;</div>
+    </div>
+    <div class="hero-title">
+      <h1>Brightline West</h1>
+      <p>High-Speed Train Infrastructure &amp; Risk Analysis</p>
+    </div>
+  </section>
+
+  <!-- PROJECT DETAILS SECTION -->
+  <section class="project-details">
+    <h2>Project Overview</h2>
+    <p>
+      At Brightline West, I contributed to a groundbreaking high-speed train
+      project in the United States by taking on two pivotal roles. My work as a
+      Summer Associate and later as an Intern provided me with a comprehensive
+      view of the design, technical analysis, and risk management required for
+      such an ambitious infrastructure project.
+    </p>
+
+    <h2>Summer Associate Experience (May 2023 – July 2023)</h2>
+    <ul>
+      <li>
+        Collaborated with the Infrastructure Design Team in Las Vegas, NV to
+        support the development of the first high-speed train system in the US.
+      </li>
+      <li>
+        Worked alongside Rolling Stock, Systems, and Maintenance Engineers to
+        optimize platform design, train dimensions, and layout for enhanced
+        safety and performance.
+      </li>
+      <li>
+        Assisted in producing a comprehensive document outlining Rail Neutral
+        Temperature, a critical parameter for safe railway maintenance.
+      </li>
+      <li>
+        Developed a Train Simulation Document using Microsoft Excel to
+        visually illustrate train departure and arrival times, optimizing
+        scheduling and operations.
+      </li>
+    </ul>
+
+    <h2>Intern Experience (June 2024 – July 2024)</h2>
+    <ul>
+      <li>
+        Researched and analyzed technical aspects of the Code of Federal
+        Regulations (CFR) to produce a detailed white paper.
+      </li>
+      <li>
+        Created a Hazard Log Analysis assessing operational and management risks
+        for passengers and staff during high-speed train operations.
+      </li>
+      <li>
+        Collaborated on the creation of a Contractor Integration Matrix to
+        represent interface control documents between contractors.
+      </li>
+      <li>
+        Reviewed engineering drawings for track and highway components to
+        identify and mitigate potential risks.
+      </li>
+    </ul>
+
+    <h2>Skills &amp; Technologies</h2>
+    <ul>
+      <li>
+        <strong>Infrastructure Design:</strong> Platform optimization, train
+        layout planning, and simulation using Excel.
+      </li>
+      <li>
+        <strong>Technical Analysis:</strong> Regulatory research, risk assessment,
+        and hazard log documentation.
+      </li>
+      <li>
+        <strong>Collaboration:</strong> Effective teamwork across multidisciplinary
+        groups.
+      </li>
+    </ul>
+
+    <h2>Outcome</h2>
+    <p>
+      My contributions at Brightline West enhanced the overall design and
+      operational planning for the high-speed train project. The experience
+      broadened my understanding of complex transportation systems and
+      reinforced my skills in technical analysis and risk management.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Adam American. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SLIDESHOW SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".hero-slider .slide");
+      const prev = document.querySelector(".hero-slider .prev");
+      const next = document.querySelector(".hero-slider .next");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === currentSlide);
+        });
+      }
+
+      prev.addEventListener("click", function () {
+        showSlide(currentSlide - 1);
+      });
+
+      next.addEventListener("click", function () {
+        showSlide(currentSlide + 1);
+      });
+
+      // Initialize slideshow
+      showSlide(currentSlide);
+    });
+  </script>
+</body>
+</html>

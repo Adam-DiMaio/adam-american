@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CubeSat - Adam American</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .project-hero {
+      position: relative;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      /* Increase margin-top so the hero is fully below the header */
+      margin-top: 120px;
+      padding: 60px 20px; /* Reduced padding for a shorter hero */
+    }
+    .hero-slider {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+    }
+    .slide.active {
+      display: block;
+    }
+    .slide img,
+    .slide video {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px 16px;
+      font-size: 18px;
+      border-radius: 4px;
+      user-select: none;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+    .hero-title {
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    .hero-title h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .hero-title p {
+      font-size: 1.1em;
+    }
+    .project-details {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .project-details h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+    .project-details p,
+    .project-details ul {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .project-details ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">
+      <img
+        src="../images/adam_american_logo/ADAM American - Eagle Logo No Background.png"
+        alt="Adam American Logo"
+      />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../resume.html">RESUME</a></li>
+        <li><a href="../projects.html">PROJECTS</a></li>
+        <li><a href="../about.html">ABOUT</a></li>
+        <li><a href="../contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-hero">
+    <div class="hero-slider">
+      <div class="slide active">
+        <img
+          src="../images/cubesat/antenna_module_closed.png"
+          alt="CubeSat Image 1"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="../images/cubesat/antenna_module_open.png"
+          alt="CubeSat Image 2"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="../images/cubesat/earth_station.png"
+          alt="CubeSat Image 3"
+        />
+      </div>
+      <div class="prev">&#10094;</div>
+      <div class="next">&#10095;</div>
+    </div>
+
+    <div class="hero-title">
+      <h1>CubeSat</h1>
+      <p>Earth Observation &amp; Innovative Antenna Module</p>
+    </div>
+  </section>
+
+  <section class="project-details">
+    <h2>Project Overview</h2>
+    <p>
+      This project focuses on developing a CubeSat for Earth observation with an
+      innovative antenna module and integrated design for enhanced performance.
+    </p>
+
+    <h2>Key Contributions & Responsibilities</h2>
+    <ul>
+      <li>Contributed to antenna module design and Earth station integration.</li>
+      <li>Ensured compliance with FCC regulations and manufacturing guidelines.</li>
+      <li>Collaborated with a multidisciplinary team to optimize satellite functionality.</li>
+    </ul>
+
+    <h2>Skills & Technologies</h2>
+    <ul>
+      <li><strong>Satellite Engineering:</strong> Small satellite design &amp; integration</li>
+      <li><strong>Radio Communication:</strong> Antenna module design &amp; signal processing</li>
+    </ul>
+
+    <h2>Outcome</h2>
+    <p>
+      The CubeSat project is ongoing and has significantly advanced our
+      understanding of small satellite systems and communication protocols.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Adam American. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".hero-slider .slide");
+      const prev = document.querySelector(".hero-slider .prev");
+      const next = document.querySelector(".hero-slider .next");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === currentSlide);
+        });
+      }
+
+      prev.addEventListener("click", function () {
+        showSlide(currentSlide - 1);
+      });
+
+      next.addEventListener("click", function () {
+        showSlide(currentSlide + 1);
+      });
+
+      // Initialize slideshow
+      showSlide(currentSlide);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>R&D Scholar: Wearable Medical Device - Adam American</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* PAGE-SPECIFIC STYLES */
+
+    /* Basic layout for the hero section (slideshow + title) */
+    .project-hero {
+      position: relative;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      /* Increase margin-top so the hero is fully below the header */
+      margin-top: 120px;
+      padding: 60px 20px; /* Reduced padding for a shorter hero */
+    }
+
+    /* Slideshow container */
+    .hero-slider {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    /* Slides */
+    .slide {
+      display: none;
+      position: relative;
+      width: 100%;
+    }
+    .slide.active {
+      display: block;
+    }
+
+    /* Images/Videos in the slide */
+    .slide img,
+    .slide video {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Previous & Next buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px 16px;
+      font-size: 18px;
+      border-radius: 4px;
+      user-select: none;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+
+    /* Title/Subtitle under the slideshow */
+    .hero-title {
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    .hero-title h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .hero-title p {
+      font-size: 1.1em;
+    }
+
+    /* Project details section */
+    .project-details {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .project-details h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+    .project-details p,
+    .project-details ul {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .project-details ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="../index.html">
+      <img
+        src="../images/adam_american_logo/ADAM American - Eagle Logo No Background.png"
+        alt="Adam American Logo"
+      />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../resume.html">RESUME</a></li>
+        <li><a href="../projects.html">PROJECTS</a></li>
+        <li><a href="../about.html">ABOUT</a></li>
+        <li><a href="../contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION (Slideshow + Title) -->
+  <section class="project-hero">
+    <!-- Slideshow Container -->
+    <div class="hero-slider">
+      <div class="slide active">
+        <img
+          src="../images/inspire/inspire_45_degree.jpeg"
+          alt="Project Image 1"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="../images/inspire/inspire_90_degree.jpeg"
+          alt="Project Image 2"
+        />
+      </div>
+      <div class="slide">
+        <video controls>
+          <source src="../images/inspire/prototype-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <!-- Slideshow Arrows -->
+      <div class="prev">&#10094;</div>
+      <div class="next">&#10095;</div>
+    </div>
+
+    <!-- Hero Title/Subtitle -->
+    <div class="hero-title">
+      <h1>R&D Scholar: Proprietary Wearable Medical Device</h1>
+      <p>Utah Tech University &middot; INSPIRE Program</p>
+    </div>
+  </section>
+
+  <!-- PROJECT DETAILS SECTION -->
+  <section class="project-details">
+    <h2>Project Overview</h2>
+    <p>
+      This project was part of the INSPIRE program at Utah Tech University. I
+      collaborated with a multidisciplinary team to develop a wearable medical
+      device designed to monitor real-time health parameters for knee
+      reconstruction patients.
+    </p>
+
+    <h2>Key Contributions & Responsibilities</h2>
+    <ul>
+      <li>Collaborated on sensor integration and ergonomic design.</li>
+      <li>Utilized CAD tools (Onshape, SolidWorks) for device component design.</li>
+      <li>Participated in prototyping and testing to ensure optimal functionality.</li>
+    </ul>
+
+    <h2>Skills & Technologies</h2>
+    <ul>
+      <li>
+        <strong>Medical Engineering:</strong> Advanced sensor integration and
+        patient-centric design.
+      </li>
+      <li>
+        <strong>Wearable Design:</strong> Emphasis on ergonomics and usability.
+      </li>
+      <li>
+        <strong>CAD & Prototyping:</strong> Iterative design using Onshape and
+        SolidWorks.
+      </li>
+    </ul>
+
+    <h2>Outcome</h2>
+    <p>
+      The project successfully demonstrated a functional prototype that improved
+      patient recovery outcomes and provided valuable interdisciplinary
+      experience.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Adam American. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SLIDESHOW SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".hero-slider .slide");
+      const prev = document.querySelector(".hero-slider .prev");
+      const next = document.querySelector(".hero-slider .next");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === currentSlide);
+        });
+      }
+
+      prev.addEventListener("click", function () {
+        showSlide(currentSlide - 1);
+      });
+
+      next.addEventListener("click", function () {
+        showSlide(currentSlide + 1);
+      });
+
+      // Initialize slideshow
+      showSlide(currentSlide);
+    });
+  </script>
+</body>
+</html>
