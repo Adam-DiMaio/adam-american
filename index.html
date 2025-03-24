@@ -35,9 +35,6 @@
       font-size: 16px;
       transition: color 0.3s;
     }
-    nav ul li a:hover {
-      color: #ccc;
-    }
     
     /* Hero Section with Automatic Background Slideshow */
     .hero {
@@ -302,7 +299,49 @@
   <section class="timeline-section">
     <h2>Professional Experience</h2>
     <div class="timeline-container">
-      <!-- Timeline Item 1: R&D Scholar -->
+      <!-- Timeline Item 1: Current Project – 3U CubeSat -->
+      <div class="timeline-item right">
+        <div class="content">
+          <div class="timeline-date">Aug 2024 - May 2025</div>
+          <h3>3U CubeSat</h3>
+          <h4>Communications Team, Utah Tech University</h4>
+          <img src="images/cubesat/antenna_module_closed.png" alt="3U CubeSat" />
+          <p>
+            Currently working on Designing and Manufacturing a fully Functioning, Autonomous, Earth-Based Uplink/Downlink System.
+          </p>
+          <a href="portfolio/cubesat.html" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Timeline Item 2: Brightline West Intern -->
+      <div class="timeline-item left">
+        <div class="content">
+          <div class="timeline-date">June 2024 - July 2024</div>
+          <h3>Intern</h3>
+          <h4>Brightline West, Las Vegas, NV</h4>
+          <img src="images/brightline_west/brightline-west-route-map-120823.jpg" alt="Route Map" />
+          <p>
+            Conducted Research and Technical Analysis, contributing to Hazard
+            Log Analysis and Contractor Integration to Enhance Operations.
+          </p>
+          <a href="portfolio/brightline-west.html" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Timeline Item 3: Brightline West Summer Associate -->
+      <div class="timeline-item right">
+        <div class="content">
+          <div class="timeline-date">May 2023 - July 2023</div>
+          <h3>Summer Associate</h3>
+          <h4>Brightline West, Las Vegas, NV</h4>
+          <img src="images/brightline_west/train-exterior-renderings-1-update.jpg" alt="Brightline West Train" />
+          <p>
+            Worked with the Infrastructure Design Team on the pioneering US
+            High-Speed Train project, optimizing platform design and layout
+            for safety and efficiency.
+          </p>
+          <a href="portfolio/brightline-west.html" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Timeline Item 4: R&D Scholar -->
       <div class="timeline-item left">
         <div class="content">
           <div class="timeline-date">Aug 2022 - May 2024</div>
@@ -318,57 +357,40 @@
           <a href="portfolio/rd-scholar.html" class="project-link">View Project</a>
         </div>
       </div>
-      <!-- Timeline Item 2: Brightline West Summer Associate -->
-      <div class="timeline-item right">
-        <div class="content">
-          <div class="timeline-date">May 2023 - July 2023</div>
-          <h3>Summer Associate</h3>
-          <h4>Brightline West, Las Vegas, NV</h4>
-          <img src="images/brightline_west/train-exterior-renderings-1-update.jpg" alt="Brightline West Train" />
-          <p>
-            Worked with the Infrastructure Design Team on the pioneering US
-            High-Speed Train project, optimizing platform design and layout
-            for safety and efficiency.
-          </p>
-          <a href="portfolio/brightline-west.html" class="project-link">View Project</a>
-        </div>
-      </div>
-      <!-- Timeline Item 3: Brightline West Intern -->
-      <div class="timeline-item left">
-        <div class="content">
-          <div class="timeline-date">June 2024 - July 2024</div>
-          <h3>Intern</h3>
-          <h4>Brightline West, Las Vegas, NV</h4>
-          <img src="images/brightline_west/brightline-west-route-map-120823.jpg" alt="Route Map" />
-          <p>
-            Conducted research and technical analysis, contributing to hazard
-            log analysis and contractor integration to enhance operational
-            safety.
-          </p>
-          <a href="portfolio/brightline-west.html" class="project-link">View Project</a>
-        </div>
-      </div>
-      <!-- Timeline Item 4: Current Project – 3U CubeSat -->
-      <div class="timeline-item right">
-        <div class="content">
-          <div class="timeline-date">Aug 2024 - May 2025</div>
-          <h3>3U CubeSat</h3>
-          <h4>Communications Team, Utah Tech University</h4>
-          <img src="images/cubesat/antenna_module_closed.png" alt="3U CubeSat" />
-          <p>
-            Currently working on antenna module and Earth station design—ensuring
-            FCC compliance and effective manufacturing plans.
-          </p>
-          <a href="portfolio/cubesat.html" class="project-link">View Project</a>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- PAST PROJECTS TIMELINE SECTION -->
   <section class="timeline-section">
+  <div class="timeline-container">
     <h2>Past Projects</h2>
-    <div class="timeline-container">
+    <div class="timeline-item left">
+      <div class="content">
+        <div class="timeline-date">Jan - Apr 2024</div>
+        <h3>Electronic Motor Boat</h3>
+        <h4>Paddle Prodigies</h4>
+        <img src="images/paddle_prodigies/ansys_fluent.png" alt="Motor Boat" />
+        <p>
+          Designed and implemented the propulsion system using fluid 
+          dynamics, FEA, and machinery—achieving approximately 218.62 N 
+          of thrust.
+        </p>
+        <a href="portfolio/paddle-boats.html" class="project-link">View Project</a>
+      </div>
+    </div>
+    <div class="timeline-item right">
+      <div class="content">
+        <div class="timeline-date">Jan - Apr 2023</div>
+        <h3>Arcade Game: Excalibur</h3>
+        <h4>Team Collaboration</h4>
+        <img src="images/arcade_game/arcade_game.jpeg" alt="Arcade Game" />
+        <p>
+          Created a retro-style arcade game integrating Arduino programming, 
+          3D printing, and laser cutting for interactive gameplay.
+        </p>
+        <a href="portfolio/arcade-game.html" class="project-link">View Project</a>
+      </div>
+    </div>
       <div class="timeline-item left">
         <div class="content">
           <div class="timeline-date">Jan - Apr 2022</div>
@@ -381,33 +403,6 @@
             engineering students.
           </p>
           <a href="portfolio/mini-golf-green.html" class="project-link">View Project</a>
-        </div>
-      </div>
-      <div class="timeline-item right">
-        <div class="content">
-          <div class="timeline-date">Jan - Apr 2023</div>
-          <h3>Arcade Game: Excalibur</h3>
-          <h4>Team Collaboration</h4>
-          <img src="images/arcade_game/arcade_game.jpeg" alt="Arcade Game" />
-          <p>
-            Created a retro-style arcade game integrating Arduino programming, 
-            3D printing, and laser cutting for interactive gameplay.
-          </p>
-          <a href="portfolio/arcade-game.html" class="project-link">View Project</a>
-        </div>
-      </div>
-      <div class="timeline-item left">
-        <div class="content">
-          <div class="timeline-date">Jan - Apr 2024</div>
-          <h3>Electronic Motor Boat</h3>
-          <h4>Paddle Prodigies</h4>
-          <img src="images/paddle_prodigies/ansys_fluent.png" alt="Motor Boat" />
-          <p>
-            Designed and implemented the propulsion system using fluid 
-            dynamics, FEA, and machinery—achieving approximately 218.62 N 
-            of thrust.
-          </p>
-          <a href="portfolio/paddle-boats.html" class="project-link">View Project</a>
         </div>
       </div>
     </div>
