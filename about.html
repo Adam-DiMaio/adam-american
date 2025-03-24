@@ -5,59 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - Adam American</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Page-Specific Styles for the About Page */
-
-    /* About Hero Section */
-    .about-hero {
-      position: relative;
-      margin-top: 180px !important; /* Larger than your header’s height */
-      padding: 40px 20px;
-      position: relative;
-      text-align: center;
-      color: #fff;
-      background: #616060;
-    }
-    .about-hero h1 {
-      font-size: 3em;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-
-    /* About Content Section */
-    .about-content {
-      max-width: 1000px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      padding: 20px;
-      align-items: center;
-    }
-    .about-content .profile-pic {
-      width: 100%;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .about-content .profile-pic img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .about-content .bio {
-      font-size: 1.1em;
-      line-height: 1.6;
-      text-align: left;
-      color: #fff;
-    }
-    .about-content .bio h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    .about-content .bio p {
-      margin-bottom: 15px;
-    }
-  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -66,14 +13,14 @@
       <img src="./images/adam_american_logo/ADAM American - Eagle Logo No Background.png" alt="Adam American Logo" />
     </a>
     <nav>
-        <ul>
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./resume.html">RESUME</a></li>
-          <li><a href="./projects.html">PROJECTS</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./contact.html">CONTACT</a></li>
-        </ul>
-      </nav>
+      <ul>
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./resume.html">RESUME</a></li>
+        <li><a href="./projects.html">PROJECTS</a></li>
+        <li><a href="./about.html">ABOUT</a></li>
+        <li><a href="./contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- About Hero Section -->
@@ -85,16 +32,32 @@
 
   <!-- About Content Section -->
   <section class="about-content">
-    <!-- Profile Image Column -->
+    <!-- Profile Slideshow Column -->
     <div class="profile-pic">
-      <!-- Replace with your actual profile image path -->
-      <img src="images\adam\Spring Career Fair Headshots - 2025.jpg" alt="Adam DiMaio Profile Picture" />
+      <div class="about-slider">
+        <!-- Add your images here -->
+        <div class="slide active">
+          <img src="./images/adam/Spring Career Fair Headshots - 2025.jpg" alt="Adam DiMaio Profile Picture 1" />
+        </div>
+        <div class="slide">
+          <img src="./images/adam/me-with-family.jpeg" alt="Adam DiMaio Profile Picture 2" />
+        </div>
+        <div class="slide">
+          <img src="./images/adam/myfriends.jpeg" alt="Adam DiMaio Profile Picture 3" />
+        </div>
+        <div class="slide">
+          <img src="./images/adam/football.jpeg" alt="Adam DiMaio Profile Picture 4" />
+        </div>
+        <!-- Navigation Arrows -->
+        <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+        <span class="next" onclick="changeSlide(1)">&#10095;</span>
+      </div>
     </div>
     <!-- Bio Column -->
     <div class="bio">
       <h2>Hi, I'm Adam DiMaio</h2>
       <p>
-        I'm a passionate Mechanical Engineer specializing in design, manufacturing, and advanced simulations. With a BS from Utah Tech University and hands-on experience across a variety of projects—from wearable medical devices to high-speed train infrastructure—I transform complex challenges into innovative solutions.
+        I'm a passionate Mechanical Engineer specializing in Design, Manufacturing, CAD, and FEA. With a Bachelors of Science from Utah Tech University and hands-on experience across a variety of projects—from wearable medical devices to high-speed train infrastructure—I transform complex challenges into innovative solutions.
       </p>
       <p>
         My journey in engineering has allowed me to work in multidisciplinary teams, honing my skills in CAD modeling, finite element analysis, and modern machining techniques. I’m committed to continuous learning and leveraging technology to solve real-world problems.
@@ -102,11 +65,42 @@
       <p>
         Whether it’s developing a CubeSat for Earth observation or contributing to groundbreaking transportation projects, I bring creativity, technical expertise, and a collaborative spirit to every challenge.
       </p>
+      <p>
+        If I am not doing Engineering then I am either Weightlifting which I love to do being a former Division 1 Athlete or spending time with Family and Friends.
+      </p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Adam American. All Rights Reserved.</p>
+    <p>© 2025 Adam American. All Rights Reserved.</p>
   </footer>
+
+  <!-- JavaScript for Slideshow -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.about-slider .slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+      } else if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+      showSlide(currentSlide);
+    }
+
+    // Initialize the slideshow
+    showSlide(currentSlide);
+  </script>
 </body>
 </html>

@@ -120,11 +120,38 @@ nav ul li a:hover {
 .hero-content h1 {
   font-size: 48px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content .hero-line {
+  display: block;
+  line-height: 1.2;
+}
+
+.hero-content .adam-letter {
+  color: #0077ff;
+  font-weight: 700;
+  animation: pulse 2s infinite;
 }
 
 .hero-content p {
   font-size: 20px;
   margin-bottom: 40px;
+}
+
+/* Animation for .adam-letter */
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px #0077ff;
+  }
+  50% {
+    text-shadow: 0 0 20px #0077ff, 0 0 30px #0077ff;
+  }
+  100% {
+    text-shadow: 0 0 5px #0077ff;
+  }
 }
 
 /* Project Page Hero Section (for project pages like cubesat.html) */
@@ -223,6 +250,98 @@ nav ul li a:hover {
   margin-left: 20px;
 }
 
+/* About Hero Section (for about.html) */
+.about-hero {
+  position: relative;
+  margin-top: 180px !important; /* Larger than your header’s height */
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  background: #616060;
+}
+
+.about-hero h1 {
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* About Content Section (for about.html) */
+.about-content {
+  max-width: 1000px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 20px;
+  align-items: center;
+}
+
+.about-content .profile-pic {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-content .about-slider {
+  position: relative;
+  width: 100%;
+}
+
+.about-content .about-slider .slide {
+  display: none;
+  width: 100%;
+}
+
+.about-content .about-slider .slide.active {
+  display: block;
+}
+
+.about-content .about-slider .slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.about-content .about-slider .prev,
+.about-content .about-slider .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 18px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.about-content .about-slider .prev {
+  left: 10px;
+}
+
+.about-content .about-slider .next {
+  right: 10px;
+}
+
+.about-content .bio {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: left;
+  color: #fff;
+}
+
+.about-content .bio h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.about-content .bio p {
+  margin-bottom: 15px;
+}
+
 /* Certifications Section (for index.html) */
 .certifications-section {
   padding: 80px 20px;
@@ -260,31 +379,6 @@ nav ul li a:hover {
 .certification-badge div {
   max-width: 150px;
   max-height: 270px;
-}
-
-/* About Section (for about.html) */
-.about-section {
-  padding: 80px 20px;
-  background: #111;
-  text-align: center;
-}
-
-.about-section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.about-section p {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.about-section img {
-  max-width: 300px;
-  border-radius: 8px;
-  margin-bottom: 20px;
 }
 
 /* PDF Container (for resume.html) */
@@ -545,6 +639,10 @@ footer {
 
   .hero-content h1 {
     font-size: 36px;
+  }
+
+  .hero-content .hero-line {
+    line-height: 1.3;
   }
 
   .hero-content p {
