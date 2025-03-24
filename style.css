@@ -130,7 +130,7 @@ nav ul li a:hover {
   line-height: 1.2;
 }
 
-.hero-content .adam-letter {
+.hero-content h1 .adam-letter {
   color: #2168d3;
   font-weight: 1000;
   animation: pulse 2s infinite;
