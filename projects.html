@@ -68,25 +68,31 @@
     }
 
     /* Projects Grid */
+
     .projects-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-      padding: 60px 20px 20px; /* Top padding to separate from hero section */
+      padding: 120px 20px 20px;
       max-width: 1200px;
       margin: 0 auto;
     }
+
+    /* Card Link (remove default link styling) */
     .card-link {
       text-decoration: none;
       color: inherit;
     }
+
+    /* Card Styles (for projects.html) */
     .card {
       position: relative;
-      overflow: hidden;
       cursor: pointer;
       border-radius: 10px;
       background: #2c3e50;
+      overflow: hidden;
     }
+
     .card .card-bg {
       width: 100%;
       height: 200px;
@@ -94,10 +100,12 @@
       background-position: center;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
+
     .card:hover .card-bg {
       transform: scale(1.05);
       opacity: 0.8;
     }
+
     .card .card-overlay {
       position: absolute;
       bottom: 0;
@@ -107,25 +115,49 @@
       padding: 15px;
       transform: translateY(100%);
       transition: transform 0.3s ease;
+      max-height: 150px; /* Limit the overlay height */
+      overflow-y: auto; /* Allow scrolling if content overflows */
     }
+
+    /* Custom scrollbar styling for better aesthetics */
+    .card .card-overlay::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .card .card-overlay::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .card .card-overlay::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+    }
+
     .card:hover .card-overlay {
       transform: translateY(0);
     }
+
     .card h2 {
       font-size: 1.25em;
       margin-bottom: 5px;
     }
+
     .card p {
       font-size: 0.9em;
       margin-bottom: 10px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
     }
+
     .skills {
       font-size: 0.8em;
     }
+
     .skills strong {
       font-weight: bold;
-    }
-    footer {
+    } 
+  footer {
       text-align: center;
       padding: 20px;
       background: #000;
@@ -164,10 +196,20 @@
         <div class="card-bg" style="background-image: url('./images/brightline_west/train-exterior-renderings-1-update.jpg');"></div>
         <div class="card-overlay">
           <h2>Brightline West</h2>
-          <p>High-Speed Train Infrastructure</p>
+          <p>High-Speed Train Infrastructure, Technical Analysis &amp; Multidisciplinary Collaboration</p>
           <div class="skills">
-            <p><strong>Technical Analysis</strong> – Risk Assessment &amp; Regulatory Research</p>
-            <p><strong>Infrastructure Design</strong> – Platform &amp; Layout Optimization</p>
+            <p>
+              <strong>Infrastructure Design:</strong> Improve Platform &amp; Train Layout,
+              Train Timetable Simulation using Excel &amp; Reviewed Engineering Drawings of Track Layout.
+            </p>
+            <p>
+              <strong>Technical Analysis:</strong> Regulatory Research, Risk Assessment,
+              and Hazard Log Documentation.
+            </p>
+            <p>
+              <strong>Collaboration:</strong> Effective Teamwork Across Multidisciplinary
+              Groups &amp; Created Contractor Integration Matrix for Interface Control Documents.
+            </p>
           </div>
         </div>
       </div>
@@ -208,11 +250,12 @@
       <div class="card">
         <div class="card-bg" style="background-image: url('./images/cubesat/earth-station.jpeg');"></div>
         <div class="card-overlay">
-          <h2>CubeSat</h2>
-          <p>Innovative Antenna Module &amp; Earth Station Design for Earth Water Observation</p>
+          <h2>Harbinger 3U CubeSat</h2>
+          <p>Earth Water Observation with Innovative Antenna Module &amp; Earth Station</p>
           <div class="skills">
             <p><strong>Mechanical Engineering</strong> – Small Satellite Mechanical Design</p>
             <p><strong>Manufacturing</strong> – Antenna &amp; Earth Station Fabrication</p>
+            <p><strong>Multidisciplinary Collaboration &amp; Integration</strong> – Combining Mechanical Components with Electrical Systems</p>
           </div>
         </div>
       </div>
@@ -223,8 +266,8 @@
       <div class="card">
         <div class="card-bg" style="background-image: url('./images/fea/phone-drop.png');"></div>
         <div class="card-overlay">
-          <h2>Finite Element Analysis</h2>
-          <p>Structural &amp; Transient Simulations</p>
+            <h2>Finite Element Analysis (FEA)</h2>
+            <p>Structural &amp; Transient Simulations</p>
           <div class="skills">
             <p><strong>Simulation</strong> – Finite Element Modeling</p>
             <p><strong>Material Analysis</strong> – Stress Testing</p>
@@ -271,9 +314,9 @@
           <h2>Fracture Mechanics</h2>
           <p>Material Failure &amp; Deformation Analysis</p>
           <div class="skills">
-            <p><strong>CAD &amp; FEA </strong> – Modeling & Analysis</p>
-            <p><strong>Dynamics</strong> – Load Calculations</p>
-            <p><strong>3D Printing</strong> – Rapid Testing</p>
+              <p><strong>FEA:</strong> LAMMPS (Calculate Stresses at the Grain Boundary), ANSYS (Fracture Tool Crack Growth Simulations) </p>
+              <p><strong>Structural Analysis:</strong> Load and Stress Evaluation, Fatigue and Fracture Assessment</p>
+              <p><strong>Additive Printing:</strong> Rapid Testing of PLA &amp; Different Infill Patterns</p>
           </div>
         </div>
       </div>
@@ -284,11 +327,12 @@
       <div class="card">
         <div class="card-bg" style="background-image: url('./images/heat_transfer/heat_sink_ansys_discovery.png');"></div>
         <div class="card-overlay">
-          <h2>Heat Transfer</h2>
-          <p>Thermal Analysis &amp; Material Optimization</p>
+            <h2>Heat Transfer: Heat Sink</h2>
+            <p>Heat Transfer &amp; Dissipation Thermal Analysis </p>
           <div class="skills">
-            <p><strong>Thermal Analysis</strong> – Heat Simulation</p>
-            <p><strong>Material Science</strong> – Conductivity Evaluation</p>
+            <p><strong>Thermal Analysis:</strong> Simulation of Heat Transfer &amp; Dissipation</p>
+            <p><strong>Heat Transfer:</strong> Evaluating Conductive Properties &amp; Calculating Fin Heat Transfer Rate</p>
+            <p><strong>Fabrication:</strong> Sand Casting &amp; 3D Prototyping</p>
           </div>
         </div>
       </div>
@@ -299,8 +343,8 @@
       <div class="card">
         <div class="card-bg" style="background-image: url('./images/arcade_game/arcade_game.jpeg');"></div>
         <div class="card-overlay">
-          <h2>Mechatronic Arcade Game</h2>
-          <p>Excalibur</p>
+          <h2>Excalibur Mechatronic Arcade Game</h2>
+          <p>Microcontrollers Integration &amp; Interactive Design</p>
           <div class="skills">
             <p><strong>Callibrating of Microcontrollers:</strong> Embedded Programming &amp; Circuit Integration</p>
             <p><strong>Game Mechanical Design:</strong> Fabricating Interactive Mechanics</p>
