@@ -35,14 +35,14 @@
       transition: color 0.3s;
     }
     
-    /* Hero Section with Automatic Background Slideshow */
+    /* Hero Section with Automatic Slideshow (for index.html) */
     .hero {
       position: relative;
       height: 80vh;
       overflow: hidden;
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
     /* Slideshow container covers the entire hero */
@@ -238,13 +238,23 @@ footer {
     flex-wrap: wrap; /* Match the full style.css */
   }
 
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-content {
+    transform: rotate(0deg);
+    max-width: 90%;
+    margin-top: 60px; /* Push the content down below the header */
+  }
+
   .hero-content h1 {
     font-size: 36px;
   }
 
   .hero-content p {
     font-size: 18px;
-    max-width: 100%; /* Match the full style.css */
+    max-width: 100%;
   }
 
   .timeline-container::after {
