@@ -10,7 +10,7 @@ body {
   background: #000;
   color: #fff;
   line-height: 1.6;
-  padding-top: 100px;
+  padding-top: 75px;
 }
 
 /* Header Styles */
@@ -60,7 +60,7 @@ nav ul li a:hover {
 /* Hero Section with Automatic Slideshow (for index.html) */
 .hero {
   position: relative;
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -70,8 +70,8 @@ nav ul li a:hover {
 
 .hero .hero-slider {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -79,7 +79,7 @@ nav ul li a:hover {
 
 .hero .hero-slider .slide {
   position: absolute;
-  top: 0;
+  top: 80px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -509,40 +509,46 @@ a.project-link:active {
   font-weight: bold;
 }
 
-/* Timeline Section (for index.html) */
+/* Timeline Section */
 .timeline-section {
-  padding: 80px 20px;
+  position: relative;          /* allows absolute positioning within */
+  padding: 50px 20px;          /* space around the heading/timeline */
   background: #222;
 }
 
 .timeline-section h2 {
   text-align: center;
   font-size: 36px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
+/* Timeline Container */
 .timeline-container {
-  position: relative;
+  position: relative;          /* reference for the ::after line */
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;              /* center the container */
+  padding-bottom: 40px;        /* ensure line extends below last item */
 }
 
+/* Vertical Line */
 .timeline-container::after {
   content: '';
   position: absolute;
   width: 4px;
   background-color: #444;
-  top: 0;
-  bottom: 0;
+  top: 30px;                      /* start line at top of .timeline-container */
+  bottom: 20px;                   /* end line at bottom of .timeline-container */
   left: 50%;
-  margin-left: -2px;
+  margin-left: -2px;           /* center the line at 50% */
 }
 
+/* Timeline Items */
 .timeline-item {
   padding: 20px 30px;
   position: relative;
   background: inherit;
   width: 50%;
+  margin-bottom: 40px;         /* extra spacing so items don’t overlap */
 }
 
 .timeline-item.left {
@@ -579,6 +585,7 @@ a.project-link:active {
   border-style: solid;
   border-color: transparent #333 transparent transparent;
 }
+
 
 .timeline-date {
   font-size: 14px;

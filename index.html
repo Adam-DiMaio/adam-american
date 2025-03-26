@@ -245,7 +245,7 @@ footer {
   .hero-content {
     transform: rotate(0deg);
     max-width: 90%;
-    margin-top: 60px; /* Push the content down below the header */
+    margin-top: 50px; /* Push the content down below the header */
   }
 
   .hero-content h1 {
@@ -257,33 +257,83 @@ footer {
     max-width: 100%;
   }
 
-  .timeline-container::after {
-    left: 31px;
-    top: 60px; /* Adjust for smaller h2 on mobile */
-  }
+  /* Timeline Section */
+.timeline-section {
+  position: relative;          /* allows absolute positioning within */
+  padding: 80px 20px;          /* space around the heading/timeline */
+  background: #222;
+}
 
-  .timeline-item {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-    margin-bottom: 20px;
-  }
+.timeline-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
 
-  .timeline-item.right {
-    left: 0;
-  }
+/* Timeline Container */
+.timeline-container {
+  position: relative;          /* reference for the ::after line */
+  max-width: 1000px;
+  margin: 0 auto;              /* center the container */
+  padding-bottom: 40px;        /* ensure line extends below last item */
+}
 
-  .timeline-item.left::before,
-  .timeline-item.right::before {
-    left: 60px;
-    border: none;
-    border-left: 8px solid #333;
-  }
+/* Vertical Line */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #444;
+  top: 0;                      /* start line at top of .timeline-container */
+  bottom: 0;                   /* end line at bottom of .timeline-container */
+  left: 50%;
+  margin-left: -2px;           /* center the line at 50% */
+}
 
-  .timeline-item p {
-    font-size: 15px; /* Match responsive adjustments for readability */
-    line-height: 1.6; /* Slightly tighter for mobile */
-  }
+/* Timeline Items */
+.timeline-item {
+  padding: 20px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+  margin-bottom: 40px;         /* extra spacing so items don’t overlap */
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item .content {
+  background: #333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.timeline-item.left::before {
+  content: " ";
+  position: absolute;
+  top: 22px;
+  right: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #333;
+}
+
+.timeline-item.right::before {
+  content: " ";
+  position: absolute;
+  top: 22px;
+  left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent #333 transparent transparent;
+}
+
 }
   </style>
 </head>
@@ -421,7 +471,7 @@ footer {
     <div class="timeline-item left">
       <div class="content">
         <div class="timeline-date">Jan - Apr 2024</div>
-        <h3>Mini Electronic Pedal Boats: Propulsion System</h3>
+        <h3>Mini Electronic Boats: Propulsion System</h3>
         <h4>Advanced Propulsion & Steering System</h4>
         <img src="images/paddle_prodigies/ansys_fluent.png" alt="Motor Boat" />
         <p>
