@@ -54,7 +54,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #66b0ff;
+  color: #66ccff;
 }
 
 /* Hero Section with Automatic Slideshow (for index.html) */
@@ -399,7 +399,7 @@ nav ul li a:hover {
 }
 
 .pdf-actions a {
-  color: #00ccff;
+  color: #66ccff;
   text-decoration: underline;
   font-size: 16px;
   margin: 0 10px;
@@ -417,6 +417,26 @@ nav ul li a:hover {
   height: 100%;
   border: none;
 }
+
+a.project-link:link {
+  color: #66ccff; /* Light blue for unvisited links */
+  text-decoration: none;
+}
+
+a.project-link:visited {
+  color: #a767fc; /* Light purple for visited links */
+  text-decoration: none;
+}
+
+a.project-link:hover {
+  color: #fff;     /* White on hover */
+  text-decoration: underline;
+}
+
+a.project-link:active {
+  color: #ccc;
+}
+
 
 /* Projects Container (for projects.html) */
 .projects-container {
