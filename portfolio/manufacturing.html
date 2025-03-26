@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manufacturing: Coffee Grinder - Adam American</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* PAGE-SPECIFIC STYLES FOR COFFEE GRINDER */
+
+    .project-hero {
+      position: relative;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      margin-top: 120px; /* Ensure hero is below fixed header */
+      padding: 60px 20px; /* Spacing for visual impact */
+    }
+    .hero-slider {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+    }
+    .slide.active {
+      display: block;
+    }
+    /* Support both images and videos */
+    .slide img,
+    .slide video {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px 16px;
+      font-size: 18px;
+      border-radius: 4px;
+      user-select: none;
+      z-index: 99; /* Ensure arrows are above the slides */
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+    .hero-title {
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    .hero-title h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .hero-title p {
+      font-size: 1.1em;
+    }
+    .project-details {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left; /* Left-align text in the project details section */
+    }
+    .project-details h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+    .project-details p,
+    .project-details ul {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .project-details ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="../index.html">
+      <img
+        src="../images/adam_american_logo/ADAM American - Eagle Logo No Background.png"
+        alt="Adam American Logo"
+      />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../resume.html">RESUME</a></li>
+        <li><a href="../projects.html">PROJECTS</a></li>
+        <li><a href="../about.html">ABOUT</a></li>
+        <li><a href="../contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="project-hero">
+    <div class="hero-slider">
+      <!-- Slide 1: Video of Coffee Grinder in Action -->
+      <div class="slide active">
+        <video controls>
+          <source src="../images/manufacturing/coffee-grinder-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <!-- Slide 2: Main Coffee Grinder Assembly -->
+      <div class="slide">
+        <img
+          src="../images/manufacturing/coffee-grinder.jpeg"
+          alt="Coffee Grinder Assembly"
+        />
+      </div>
+      <!-- Slide 3: Injection Mold for the Coffee Grinder Part -->
+      <div class="slide">
+        <img
+          src="../images/manufacturing/coffee-grinder-injection-mold.jpeg"
+          alt="Coffee Grinder Injection Mold"
+        />
+      </div>
+      <!-- Slide 4: Adjustment Knob Injection Mold -->
+      <div class="slide">
+        <img
+          src="../images/manufacturing/adjustment-knob-injection-mold.jpeg"
+          alt="Adjustment Knob Mold"
+        />
+      </div>
+
+      <div class="prev">&#10094;</div>
+      <div class="next">&#10095;</div>
+    </div>
+
+    <div class="hero-title">
+      <h1>Manufacturing: Coffee Grinder</h1>
+      <p>Injection Molding, CNC Fabrication, &amp; Product Design</p>
+    </div>
+  </section>
+
+  <!-- PROJECT DETAILS SECTION -->
+  <section class="project-details">
+    <h2>Project Overview</h2>
+    <p>
+      This Manufacturing Project Involved Designing and Manufacturing a Custom Coffee Grinder, 
+      which Focused on Creating a Manufacturable, Durable, and Functional Design through Injection Molding, CNC Machining, Manual Milling, and Manual Lathing.
+      The Highlight of the Coffee Grinder’s Design is the Injection-Molded 
+      Adjustment Knob, which Allows Users to Fine-Tune their Coffee Grain Size.
+    </p>
+
+    <h2>Key Contributions &amp; Responsibilities</h2>
+    <ul>
+      <li>
+        Designed the Coffee Grinder’s Internal Components, 
+        Ensuring Proper Tolerances to fit the Clear PVC Tube for a Smooth Grinding Mechanism.
+      </li>
+      <li>
+        Created a Custom Injection Mold for the Adjustment Knob, using 
+        CNC-Milled Aluminum to Achieve Precise Dimensions.
+      </li>
+      <li>
+        Selected Food Grade Fasteners and Materials for the Coffee Grinder to Allow for Coffee Beans.
+      </li>
+      <li>
+        Used Manual Mill and Lathe to Achieve Tight Tolerances on the End Caps, Threaded Shaft and the Middle Piece Holding the Spring for the Adjustment Knob.
+      </li>
+      <li>
+        Verified the Final Assembly’s Functionality through Tterative Testing 
+        and End-User Feedback, Focusing on Consistent Grind Size and Ease of Use.
+      </li>
+    </ul>
+
+    <h2>Skills &amp; Technologies</h2>
+    <ul>
+      <li>
+        <strong>Injection Molding:</strong> Design of Mold Cavities, Gating Systems, 
+        and Idealized Material Flow for Plastic Part Production.
+      </li>
+      <li>
+        <strong>CNC Machining:</strong> Milled Aluminum Mold Insert to Precise 
+        Tolerances, Ensuring the Final Injection-Molded Parts fit Correctly.
+      </li>
+      <li>
+        <strong>Manual Machining:</strong> Used both the Manual Mill and Lathe to Achieve Tight Tolerances
+        for Aluminum Threaded Shaft, End Caps, and Middle Piece for Adjustment Knob Spring.
+      </li>
+      <li>
+        <strong>Product Design:</strong> Developed Ergonomic Features and 
+        Mechanical Assemblies that Withstand Repeated use in Coffee Grinding.
+      </li>
+      <li>
+        <strong>Testing &amp; Validation:</strong> Conducted Trials to Ensure 
+        Consistent Grind Quality, Durable Components, and User-Friendly Operation.
+      </li>
+    </ul>
+
+    <h2>Outcome</h2>
+    <p>
+      This Completed Coffee Grinder Featured a Robust, Injection-Molded Adjustment 
+      Knob and Precision-Machined Components, which Resulted in a Reliable, User-Friendly 
+      Product. Through Careful Material Selection, Mold Design, and Iterative Testing, 
+      the Final Grinder Offered a Consistent Grind Quality while Showcasing Advanced 
+      Manufacturing Techniques and Attention to Detail.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Adam American. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".hero-slider .slide");
+      const prev = document.querySelector(".hero-slider .prev");
+      const next = document.querySelector(".hero-slider .next");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+        // Pause any playing videos and hide all slides
+        slides.forEach((slide) => {
+          const video = slide.querySelector("video");
+          if (video) video.pause();
+          slide.classList.remove("active");
+        });
+        // Show the current slide
+        slides[currentSlide].classList.add("active");
+      }
+
+      // Arrows event listeners
+      prev.addEventListener("click", function () {
+        showSlide(currentSlide - 1);
+      });
+
+      next.addEventListener("click", function () {
+        showSlide(currentSlide + 1);
+      });
+
+      // Initialize slideshow
+      showSlide(currentSlide);
+    });
+  </script>
+</body>
+</html>
