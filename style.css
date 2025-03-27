@@ -251,6 +251,22 @@ nav ul li a:hover {
 }
 
 /* About Hero Section (for about.html) */
+    /* About Section */
+    .about-section {
+      padding: 40px 20px;
+      background: #111;
+      text-align: center;
+    }
+    .about-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 18px;
+      line-height: 1.6;
+    }  
 .about-hero {
   position: relative;
   margin-top: 180px !important; /* Larger than your header’s height */
