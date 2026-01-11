@@ -6,7 +6,7 @@
   <title>Contact - Adam American</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Your existing styles */
+    /* Contact Page Styles */
     .contact-container {
       max-width: 800px;
       margin: 120px auto 40px;
@@ -43,21 +43,19 @@
     .contact-container form input[type="submit"]:hover {
       background: #444;
     }
-    .note {
-      font-size: 0.9em;
-      margin-top: 15px;
-      color: #aaa;
-      text-align: center;
-    }
     .contact-info {
       margin-top: 20px;
       text-align: center;
       font-size: 1em;
     }
+    .contact-info a {
+      color: #fff;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <!-- HEADER (unchanged) -->
+  <!-- HEADER -->
   <header>
     <a href="./index.html">
       <img src="./images/adam_american_logo/ADAM American - Eagle Logo No Background.png" alt="Adam American Logo" />
@@ -75,7 +73,7 @@
 
   <!-- CONTACT FORM SECTION -->
   <section class="contact-container">
-    <h2>Contact Me</h2>
+<h2>Contact Me</h2>
     <form id="contactForm">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" placeholder="Your Name" required />
@@ -93,10 +91,9 @@
     </form>
     
     <div class="contact-info">
-      <p>Preferred contact: LinkedIn message or phone</p>
+      <p>Email: <a href="mailto:adam.dimaio@outlook.com">adam.dimaio@outlook.com</a></p>
       <p>Phone: <a href="tel:+17029542032">+1 (702) 954-2032</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/adamdimaio/" target="_blank">adamdimaio</a></p>
-      <p class="note">Email address not displayed to reduce spam — use the form above.</p>
     </div>
   </section>
 
